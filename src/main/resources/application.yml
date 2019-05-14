@@ -1,0 +1,9 @@
+---
+
+server:
+  port: 8888
+
+seafile:
+  ipAddress: http://10.12.36.165:8000
+  user: test@123.com
+  password: 123123
