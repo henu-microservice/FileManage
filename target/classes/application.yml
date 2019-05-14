@@ -17,7 +17,5 @@ seafile:
     getUploadLink: http://10.12.36.165:8000/api2/repos/dea61fa4-1f96-457c-ba27-4e7b477c6fbc/upload-link/
   library:
     repoId: dea61fa4-1f96-457c-ba27-4e7b477c6fbc #music
-    #sss:
-    #DSDASDS
 
 
