@@ -28,6 +28,11 @@ public class AccountServiceImpl implements AccountService {
     @Value("${seafile.token}")
     private String token;
 
+    /**
+     * @param username 用户名
+     * @param data     json结构体：包括passwd,is_staff,is_active
+     * @return 响应体
+     */
     public ResponseModel creatAccount(String username, String data) {
         username = username + "@123.com";
         Map<String, String> accountMap = new HashMap<>();
@@ -46,8 +51,8 @@ public class AccountServiceImpl implements AccountService {
         if ("401".equals(responseCode)) {
             return ResponseUtils.setReturn(401, null, "Token无效");
         }
-        if("200".equals(responseCode)){
-            return ResponseUtils.setReturn(201,null,"已存在该用户");
+        if ("200".equals(responseCode)) {
+            return ResponseUtils.setReturn(201, null, "已存在该用户");
         }
         if (!"200".equals(responseCode) && !"201".equals(responseCode)) {
             return ResponseUtils.setReturn(409, null, "创建失败");
