@@ -61,6 +61,28 @@ public class SendRequestUtils {
         return getData(client, request);
     }
 
+
+    public static Map<String, String> send(String data, String url, String token, String method) {
+        RequestBody body = null;
+        HashMap<String, String> map = new HashMap<>();
+        if (StringUtils.isEmpty(data) && !"GET".equals(method)) {
+            body = RequestBody.create(JSON, "{}");
+        } else if ("PATCH".equals(method)) {
+            body = RequestBody.create(PATCH_JSON, data);
+        } else if (!StringUtils.isEmpty(data) && !"GET".equals(method)) {
+            body = RequestBody.create(JSON, data);
+        }
+        Request request = new Request.Builder()
+                //.header("Content-Type","application/x-www-form-urlencoded")
+                .header("Authorization", "Token " + token)
+                .url(url)
+                .method(method, body)
+                .build();
+        //System.out.println(getData(client, request));
+        return getData(client, request);
+
+    }
+
     /**
      * GET 请求
      *
@@ -76,6 +98,7 @@ public class SendRequestUtils {
 
     /**
      * GET 请求  用来在请求头中加入token
+     *
      * @param url
      * @param token
      * @return
@@ -83,7 +106,7 @@ public class SendRequestUtils {
     public static Map<String, String> send(String url, String token) {
         Request request = new Request.Builder()
                 //.header("Content-Type","application/x-www-form-urlencoded")
-                .header("Authorization","Token "+token)
+                .header("Authorization", "Token " + token)
                 .url(url)
                 .build();
         return getData(client, request);

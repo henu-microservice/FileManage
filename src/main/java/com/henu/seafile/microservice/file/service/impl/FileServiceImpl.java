@@ -84,8 +84,6 @@ public class FileServiceImpl implements FileService {
      */
     public ResponseModel getToken(String json) {
         Map<String, String> accountMap = new HashMap<>();
-//        accountMap.put("username", username);
-//        accountMap.put("password", password);
         JSONObject accountJson = JSON.parseObject(json);
         String username = accountJson.getString("username");
         String password = accountJson.getString("password");

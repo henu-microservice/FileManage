@@ -13,6 +13,7 @@ seafile:
     ping: http://${seafile.baseUrl}:8000/api2/ping/
     obtainAuthToken: http://${seafile.baseUrl}:8000/api2/auth-token/ #获取用户token接口
     getUploadLink: http://${seafile.baseUrl}:8000/api2/repos/dea61fa4-1f96-457c-ba27-4e7b477c6fbc/upload-link/ #获取上传链接接口
+    creatAccount: http://${seafile.baseUrl}:8000/api2/accounts/ #创建新用户接口
   library:
     repoId: dea61fa4-1f96-457c-ba27-4e7b477c6fbc #music库
     #id:

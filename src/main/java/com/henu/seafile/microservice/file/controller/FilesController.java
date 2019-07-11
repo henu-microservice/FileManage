@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 
 @RestController
-@RequestMapping("/file")
+@RequestMapping("/api/file")
 public class FilesController {
 
     @Autowired
