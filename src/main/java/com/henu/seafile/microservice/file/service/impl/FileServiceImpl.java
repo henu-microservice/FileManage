@@ -25,19 +25,63 @@ public class FileServiceImpl implements FileService {
 
 
     @Value("${seafile.api.obtainAuthToken}")
-    private String obtainAuthTokenUrl;
-//    @Value("${seafile.user}")
-//    private String user;
-//    @Value("${seafile.password}")
-//    private String password;
+    private String getAuthTokenUrl;
 
+    @Value("${seafile.api.getUploadLink}")
+    private String getUploadLink;
+
+    @Value("${seafile.api.ping}")
+    private String getApiPing;
+
+    @Value("${seafile.token}")
+    private String token;
+
+    @Value("${seafile.library.repoId}")
+    private String repoId;
+
+    /**
+     * 测试seahub服务是否正常,测试ping接口
+     * @return
+     */
+    public ResponseModel testApi() {
+        Map<String, String> map = new HashMap<>();
+        map = SendRequestUtils.send(getApiPing);
+        String responseCode = map.get("responseCode");
+        if (!"200".equals(responseCode)) {
+            return ResponseUtils.setReturn(409, null, "测试失败");
+        }
+        String jsonObject = map.get("responseData").replaceAll("\"", "");
+        return ResponseUtils.setReturn(200, jsonObject, "测试成功");
+    }
+
+
+    /**
+     * 上传文件的接口实现方法，目前没有使用
+     *
+     * @param files
+     * @return
+     */
     public ResponseModel uploadFile(MultipartFile[] files) {
-//        ResponseModel response = getToken();
-//        String data = response.getData();
+
+        Map<String, String> responseResult = SendRequestUtils.send(getUploadLink, token);
+        String responseCode = responseResult.get("responseCode");
+        if (!"200".equals(responseCode)) {
+            return ResponseUtils.setReturn(409, null, "获取上传链接失败!");
+        }
+        String responseData = responseResult.get("responseData").replaceAll("\"", "");
+//        System.out.println(responseData);
+//        JSONObject jsonObject = JSONObject.parseObject(responseData);
+//        return ResponseUtils.setReturn(200, jsonObject, "获取上传链接成功！");
         return null;
     }
 
 
+    /**
+     * 获取token的接口的实现方法
+     *
+     * @param json
+     * @return
+     */
     public ResponseModel getToken(String json) {
         Map<String, String> accountMap = new HashMap<>();
 //        accountMap.put("username", username);
@@ -45,10 +89,10 @@ public class FileServiceImpl implements FileService {
         JSONObject accountJson = JSON.parseObject(json);
         String username = accountJson.getString("username");
         String password = accountJson.getString("password");
-        accountMap.put("username",username);
-        accountMap.put("password",password);
+        accountMap.put("username", username);
+        accountMap.put("password", password);
         String data = JSON.toJSONString(accountMap);
-        Map<String, String> responseResult = SendRequestUtils.send(data, obtainAuthTokenUrl, HttpMethod.POST.name());
+        Map<String, String> responseResult = SendRequestUtils.send(data, getAuthTokenUrl, HttpMethod.POST.name());
         String responseCode = responseResult.get("responseCode");
         if (!"200".equals(responseCode)) {
             return ResponseUtils.setReturn(409, null, "获取token失败");

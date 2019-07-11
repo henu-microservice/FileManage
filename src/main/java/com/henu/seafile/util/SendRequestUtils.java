@@ -75,6 +75,21 @@ public class SendRequestUtils {
     }
 
     /**
+     * GET 请求  用来在请求头中加入token
+     * @param url
+     * @param token
+     * @return
+     */
+    public static Map<String, String> send(String url, String token) {
+        Request request = new Request.Builder()
+                //.header("Content-Type","application/x-www-form-urlencoded")
+                .header("Authorization","Token "+token)
+                .url(url)
+                .build();
+        return getData(client, request);
+    }
+
+    /**
      * 发送请求后，获取相应的数据
      *
      * @param okHttpClient

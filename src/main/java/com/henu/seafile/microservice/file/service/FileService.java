@@ -12,6 +12,7 @@ public interface FileService {
 
     ResponseModel uploadFile(MultipartFile[] files);
     ResponseModel getToken(String json);
+    ResponseModel testApi();
 
 
 }
