@@ -33,8 +33,6 @@ public class FileServiceImpl implements FileService {
     @Value("${seafile.api.ping}")
     private String getApiPing;
 
-    @Value("${seafile.token}")
-    private String token;
 
     @Value("${seafile.library.repoId}")
     private String repoId;
@@ -63,12 +61,12 @@ public class FileServiceImpl implements FileService {
      */
     public ResponseModel uploadFile(MultipartFile[] files) {
 
-        Map<String, String> responseResult = SendRequestUtils.send(getUploadLink, token);
-        String responseCode = responseResult.get("responseCode");
-        if (!"200".equals(responseCode)) {
-            return ResponseUtils.setReturn(409, null, "获取上传链接失败!");
-        }
-        String responseData = responseResult.get("responseData").replaceAll("\"", "");
+//        Map<String, String> responseResult = SendRequestUtils.send(getUploadLink, token);
+//        String responseCode = responseResult.get("responseCode");
+//        if (!"200".equals(responseCode)) {
+//            return ResponseUtils.setReturn(409, null, "获取上传链接失败!");
+//        }
+//        String responseData = responseResult.get("responseData").replaceAll("\"", "");
 //        System.out.println(responseData);
 //        JSONObject jsonObject = JSONObject.parseObject(responseData);
 //        return ResponseUtils.setReturn(200, jsonObject, "获取上传链接成功！");

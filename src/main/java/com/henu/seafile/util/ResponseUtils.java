@@ -31,6 +31,12 @@ public class ResponseUtils {
             model.setMessage("执行成功");
             return model;
         }
+        if (202==code) {
+            model.setCode(code);
+            model.setData(null);
+            model.setMessage("已接受请求，未处理");
+            return model;
+        }
         if (400==code) {
             model.setCode(code);
             model.setData(responseDataJsonObj);
@@ -40,7 +46,7 @@ public class ResponseUtils {
         if (401==code) {
             model.setCode(code);
             model.setData(null);
-            model.setMessage("未经授权。或启用了验证，您没有提供足够的信息来验证该请求");
+            model.setMessage("未经授权，或启用了验证，您没有提供足够的信息来验证该请求");
             return model;
         }
         if (403==code) {

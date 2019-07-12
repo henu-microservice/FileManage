@@ -8,5 +8,7 @@ import com.henu.seafile.util.ResponseModel;
  * @Date 2019/7/11 11:34
  */
 public interface AccountService {
-    ResponseModel creatAccount(String account, String data);
+    ResponseModel createAccount(String token, String username, String data);
+
+    ResponseModel deleteAccount(String token, String username);
 }
