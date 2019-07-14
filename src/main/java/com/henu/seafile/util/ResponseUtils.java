@@ -27,7 +27,7 @@ public class ResponseUtils {
         }
         if (200==code) {
             model.setCode(code);
-            model.setData(null);
+            model.setData(data);
             model.setMessage("执行成功");
             return model;
         }

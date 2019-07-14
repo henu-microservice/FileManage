@@ -11,6 +11,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,25 +27,21 @@ public class FileServiceImpl implements FileService {
 
 
     @Value("${seafile.api.obtainAuthToken}")
-    private String getAuthTokenUrl;
-
-    @Value("${seafile.api.getUploadLink}")
-    private String getUploadLink;
+    private String authTokenUrl;
 
     @Value("${seafile.api.ping}")
-    private String getApiPing;
-
-
-    @Value("${seafile.library.repoId}")
-    private String repoId;
+    private String apiPing;
+    @Value("${seafile.baseUrl}")
+    private String seafileIp;
 
     /**
      * 测试seahub服务是否正常,测试ping接口
+     *
      * @return
      */
     public ResponseModel testApi() {
         Map<String, String> map = new HashMap<>();
-        map = SendRequestUtils.send(getApiPing);
+        map = SendRequestUtils.send(apiPing);
         String responseCode = map.get("responseCode");
         if (!"200".equals(responseCode)) {
             return ResponseUtils.setReturn(409, null, "测试失败");
@@ -56,21 +54,22 @@ public class FileServiceImpl implements FileService {
     /**
      * 上传文件的接口实现方法，目前没有使用
      *
-     * @param files
+     * @param
      * @return
      */
-    public ResponseModel uploadFile(MultipartFile[] files) {
+    public ResponseModel uploadFile(String token, String repoId, String parentDir, File... files) {
 
-//        Map<String, String> responseResult = SendRequestUtils.send(getUploadLink, token);
-//        String responseCode = responseResult.get("responseCode");
-//        if (!"200".equals(responseCode)) {
-//            return ResponseUtils.setReturn(409, null, "获取上传链接失败!");
-//        }
-//        String responseData = responseResult.get("responseData").replaceAll("\"", "");
-//        System.out.println(responseData);
-//        JSONObject jsonObject = JSONObject.parseObject(responseData);
-//        return ResponseUtils.setReturn(200, jsonObject, "获取上传链接成功！");
-        return null;
+        String uploadURL = getUploadLink(token, repoId);
+        Map<String, String> responseResult = SendRequestUtils.send(token, uploadURL, parentDir, files);
+        String responseCode = responseResult.get("responseCode");
+        if (!"200".equals(responseCode)) {
+            return ResponseUtils.setReturn(409, null, "上传失败");
+        }
+        String responseData = "{\"fileId\":" + "\"" + responseResult.get("responseData") + "\"" + "}";
+        System.out.println(responseData);
+        JSONObject jsonObject = JSONObject.parseObject(responseData);
+        System.out.println(jsonObject);
+        return ResponseUtils.setReturn(200, jsonObject, "上传成功");
     }
 
 
@@ -88,7 +87,7 @@ public class FileServiceImpl implements FileService {
         accountMap.put("username", username);
         accountMap.put("password", password);
         String data = JSON.toJSONString(accountMap);
-        Map<String, String> responseResult = SendRequestUtils.send(data, getAuthTokenUrl, HttpMethod.POST.name());
+        Map<String, String> responseResult = SendRequestUtils.send(data, authTokenUrl, HttpMethod.POST.name());
         String responseCode = responseResult.get("responseCode");
         if (!"200".equals(responseCode)) {
             return ResponseUtils.setReturn(409, null, "获取token失败");
@@ -96,8 +95,21 @@ public class FileServiceImpl implements FileService {
         String responseData = responseResult.get("responseData");
         JSONObject jsonObject = JSONObject.parseObject(responseData);
         return ResponseUtils.setReturn(200, jsonObject, "获取token成功");
-
     }
 
+    /**
+     * 获取上传文件的URL
+     *
+     * @param token
+     * @param repoId 存储库Id
+     * @return
+     */
 
+    public String getUploadLink(String token, String repoId) {
+        String getupLoadUrl = "http://10.12.37.209:8000/api2/repos/" + repoId + "/upload-link/"; //获取上传链接
+        Map<String, String> responseResult = SendRequestUtils.send(getupLoadUrl, token);
+        String responseData = responseResult.get("responseData").replaceAll("\"", "");//获取的数据中，即上传链接
+        System.out.println(responseData);
+        return responseData;
+    }
 }

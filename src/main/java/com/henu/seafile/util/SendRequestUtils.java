@@ -1,8 +1,12 @@
 package com.henu.seafile.util;
 
 import okhttp3.*;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -105,7 +109,7 @@ public class SendRequestUtils {
      */
     public static Map<String, String> send(String url, String token) {
         Request request = new Request.Builder()
-                //.header("Content-Type","application/x-www-form-urlencoded")
+                //.header("Content-Type", "application/x-www-form-urlencoded")
                 .header("Authorization", "Token " + token)
                 .url(url)
                 .build();
@@ -142,11 +146,34 @@ public class SendRequestUtils {
 
     }
 
-//    public static void main(String[] args) {
-//        Map<String, String> map = new HashMap<>();
-//        map = SendRequestUtils.send("http://10.12.36.165:8000/api2/ping/");
-//        System.out.println(map);
-//
-//
-//    }
+    /**
+     * 发送文件
+     *
+     * @param files 文件
+     * @param url   请求路径
+     * @return map
+     */
+    public static Map<String, String> send(String token, String url, String parentDir, File... files) {
+        RequestBody body = null;
+        MultipartBody.Builder builder = new MultipartBody.Builder();
+        builder.setType(MultipartBody.FORM);
+
+        for (File file : files) {
+            body = RequestBody.create(MediaType.parse("application/octet-stream"), file);
+            //body = RequestBody.create(FILE_TYPE, file);
+            builder.addFormDataPart("file", file.getName(), body);
+        }
+        builder.addFormDataPart("parent_dir", parentDir);
+        RequestBody multipartBody = builder.build();
+        Request request = new Request.Builder()
+                .header("Content-Type", "application/x-www-form-urlencoded")
+                .header("Authorization", "Token " + token)
+                .post(multipartBody)
+                .url(url)
+                //.method("POST", multipartBody)
+                .build();
+
+        return getData(client, request);
+    }
+
 }
