@@ -3,20 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="3c27cc1b-a23b-4d64-a136-1c5677b15c70" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/henu/seafile/StartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/henu/seafile/StartApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/controller/FilesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/controller/FilesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/service/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/service/impl/FileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/henu/seafile/util/ResponseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/henu/seafile/util/ResponseUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/henu/seafile/util/SendRequestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/henu/seafile/util/SendRequestUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/henu/seafile/StartApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/henu/seafile/StartApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/henu/seafile/microservice/file/controller/FilesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/henu/seafile/microservice/file/controller/FilesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/henu/seafile/microservice/file/controller/FilesController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/henu/seafile/microservice/file/service/FileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/henu/seafile/microservice/file/service/FileService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/henu/seafile/microservice/file/service/impl/FileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/henu/seafile/util/SendRequestUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/henu/seafile/microservice/file/service/impl/FileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/henu/seafile/microservice/file/service/impl/FileServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/henu/seafile/util/ResponseUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/henu/seafile/util/ResponseUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/henu/seafile/util/SendRequestUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/henu/seafile/util/SendRequestUtils.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,16 +59,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="7330" />
-          <entry key="txt" value="91" />
+          <entry key="java" value="7332" />
+          <entry key="txt" value="116" />
           <entry key="xml" value="21" />
           <entry key="yml" value="563" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7330" />
-          <entry key="PLAIN_TEXT" value="91" />
+          <entry key="JAVA" value="7332" />
+          <entry key="PLAIN_TEXT" value="116" />
           <entry key="XML" value="21" />
           <entry key="YAML" value="563" />
         </counts>
@@ -87,11 +80,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/controller/FilesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="68" column="33" lean-forward="true" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+            <state relative-caret-position="418">
+              <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#873#874#0" expanded="true" />
@@ -115,10 +108,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/henu/seafile/StartApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="61">
               <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
               <folding>
                 <element signature="e#617#618#0" expanded="true" />
@@ -174,10 +167,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/service/FileService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/henu/seafile/util/SendRequestUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/henu/seafile/util/ResponseUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/controller/FilesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/service/impl/FileServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/henu/seafile/StartApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/controller/FilesController.java" />
       </list>
     </option>
   </component>
@@ -241,51 +234,6 @@
               <item name="FileManage" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FileManage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FileManage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FileManage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FileManage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seafile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FileManage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FileManage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seafile" type="462c0819:PsiDirectoryNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FileManage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FileManage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seafile" type="462c0819:PsiDirectoryNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FileManage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FileManage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seafile" type="462c0819:PsiDirectoryNode" />
-              <item name="microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FileManage" type="b2602c69:ProjectViewProjectNode" />
@@ -398,7 +346,7 @@
       <workItem from="1562743894498" duration="2728000" />
       <workItem from="1562810011369" duration="13562000" />
       <workItem from="1562826546136" duration="10073000" />
-      <workItem from="1562938613843" duration="33768000" />
+      <workItem from="1562938613843" duration="34041000" />
     </task>
     <task id="LOCAL-00001" summary="搭建开发框架">
       <created>1557738683085</created>
@@ -435,11 +383,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562911232167</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="增加上传文件接口（测试）">
+      <created>1563080548291</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1563080548291</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114724000" />
+    <option name="totallyTimeSpent" value="114997000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -452,7 +407,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994233" visible="true" weight="0.22493887" />
       <window_info id="Structure" order="1" sideWeight="0.5005767" side_tool="true" weight="0.22555012" />
@@ -461,12 +415,12 @@
       <window_info id="Favorites" order="4" sideWeight="0.5005767" side_tool="true" weight="0.22555012" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40023068" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2848904" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4071511" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49938875" weight="0.32756633" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.31487888" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.31487888" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49938875" weight="0.34832758" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50061125" side_tool="true" weight="0.30449826" />
@@ -547,7 +501,8 @@
     <MESSAGE value="新增创建用户接口" />
     <MESSAGE value="增加适当注释" />
     <MESSAGE value="增加删除用户的接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加删除用户的接口" />
+    <MESSAGE value="增加上传文件接口（测试）" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加上传文件接口（测试）" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/henu/seafile/service/file/FileService.java" />
@@ -829,20 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/controller/FilesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="68" column="33" lean-forward="true" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
-            <element signature="e#1088#1089#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -893,11 +834,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/henu/seafile/StartApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="61">
           <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
           <folding>
             <element signature="e#617#618#0" expanded="true" />
             <element signature="e#684#685#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/henu/seafile/microservice/file/controller/FilesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#917#918#0" expanded="true" />
+            <element signature="e#1088#1089#0" expanded="true" />
+            <element signature="e#1137#1138#0" expanded="true" />
           </folding>
         </state>
       </provider>
